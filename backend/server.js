@@ -4,8 +4,10 @@ const { default: mongoose } = require('mongoose');
 const app = express();
 const authRoutes = require('./routes/authRoutes.js')
 const taskRoutes = require('./routes/taskRoutes.js')
-
+const cors = require('cors')
 app.use(express.json());
+
+app.use(cors())
 
 const PORT = process.env.PORT
 const MONGODB_URL = process.env.MONGODB_URL
